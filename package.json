@@ -1,0 +1,25 @@
+{
+  "name": "phpqatools-grunt",
+  "version": "1.0.0",
+  "description": "Running Php quality assurance tools using Grunt",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RazaChohan/CitySpecific-WeatherInfo.git"
+  },
+  "author": "Muhammad Raza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RazaChohan/CitySpecific-WeatherInfo/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-phpcpd": "*.*.*",
+    "grunt-phpcs": "^0.2.3",
+    "grunt-phpmd": "^0.1.0",
+    "grunt-phpunit": "^0.3.4"
+  }
+}
