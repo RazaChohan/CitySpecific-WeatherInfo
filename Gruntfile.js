@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
         phpmd: {
           application: {
-                dir: ['*.php']
+                dir: 'YahooWeatherAPI_cityWeatherInfo.php'
           },
             options: {
                 bin: 'vendor/bin/phpmd',
