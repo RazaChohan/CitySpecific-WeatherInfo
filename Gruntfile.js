@@ -12,13 +12,16 @@ module.exports = function(grunt) {
 
         phpmd: {
           application: {
-                dir: 'YahooWeatherAPI_cityWeatherInfo.php'
+                dir: './'
           },
             options: {
                 bin: 'vendor/bin/phpmd',
-                rulesets: 'codesize'
+                suffixes: 'php',
+                rulesets: 'naming',
+                exclude:'vendor,phpmd,node_modules,docs'
+
                }
-           },
+           }, 
 
         phpcs: {
           application: {
@@ -26,7 +29,7 @@ module.exports = function(grunt) {
           },
             options: {
                bin: 'vendor/bin/phpcs',
-               standard: 'Zend'
+               standard: 'PSR1'
             }
         },
 
@@ -43,12 +46,32 @@ module.exports = function(grunt) {
         phpdocumentor: {
         dist: {
             options: {
-                directory : '*.php',
+                directory : ['./'],
+				exclude:'vendor,phpmd,node_modules,forphpmd,docs',
                 target : 'docs'
             }
-        }
+        }	
+    },
+	    shell: {                                
+        listFolders: {                     
+          options: {                     
+            stderr: false
+          },
+            command: 'php phpdcd.phar *.php'  
+          }
+        },
+		
+		phpdcd: {
+  		application: {
+     		 dir: ['*.php']
+    		},
+    options: {
+      namesExclude: 'config.php,settings.php',
+	  bin: 'vendor/bin/phpdcd'
     }
-        
+}
+
+
     });
 
     // Load required modules
@@ -56,7 +79,9 @@ module.exports = function(grunt) {
       grunt.loadNpmTasks('grunt-phpcs');
       grunt.loadNpmTasks('grunt-phpcpd');
       grunt.loadNpmTasks('grunt-phpdocumentor');
+      grunt.loadNpmTasks('grunt-shell');
+	  grunt.loadNpmTasks('grunt-phpdcd');
       
     // Task definitions
-    grunt.registerTask('default', ['phpmd','phpcs','phpcpd']);
+    grunt.registerTask('default', ['phpmd','phpdcd','phpcpd','phpdocumentor','shell','phpcs']);
 };

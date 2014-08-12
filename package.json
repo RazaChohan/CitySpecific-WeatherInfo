@@ -19,7 +19,10 @@
     "grunt": "~0.4.2",
     "grunt-phpcpd": "*.*.*",
     "grunt-phpcs": "^0.2.3",
+    "grunt-phpdcd": "^0.1.0",
+    "grunt-phpdocumentor": "^0.4.1",
     "grunt-phpmd": "^0.1.0",
-    "grunt-phpunit": "^0.3.4"
+    "grunt-phpunit": "^0.3.4",
+    "grunt-shell": "^0.7.0"
   }
 }

@@ -1,24 +1,18 @@
 <?php
-
+namespace citySpecificWeatherInfo;
 /**
  * Contain Run/Driver function for City weather Info Class
- * CityWeatherInfoDriver
  *
  * This file  contains one Class
  * that acts as a Driver for CityWeatherInfo class.
  *
- *
- * LICENSE: Licensed Under Coeus Solutions GmBH
- *
  * @category Training/Learning PHP
  * @package Yahoo_Weather_API
- * @copyright Coeus-Solutions GmBH
- * @version v 1.1
+ * @version v 1.2
  */
-require_once ('YahooWeatherAPI_cityWeatherInfo.php');
 
 /**
- * CityWeatherInfoDriver class
+ * Contains city weather info API driver class
  *
  * This Class Implements the functionality of a Driver for 
  * city weatherInfo class in the same package of Yahoo_Weather_API
@@ -27,42 +21,49 @@ require_once ('YahooWeatherAPI_cityWeatherInfo.php');
  * @package Yahoo_Weather_API
  * @author Muhammad Raza <muhammad.raza@coeus-solutions.de>
  * @category Training/Learning PHP
- * @copyright Coeus-Solutions GmBH
- * @version v 1.1
+ * @version v 1.2
  */
-class cityWeatherInfoDriver {
 
+class CityWeatherInfoDriver 
+{
+    private $cityWeatherInfoObj; //City Weather info Class Object
+    private $statisticsCalculatorObj; //Stat
     /**
      * Interface for Executing functionality of cityWeatherInfo Class
      *
      * This method asks the user to give input on the basis of that it
      * enables to user to interact with class functionality.
      *
-     *
-     *
+     * @param string $cityname 'City Name'
      */
-    public function cityWeatherInfo_run($cityname) {
-        $cityWeatherInfoObj = new CityWeatherInfo();
-
-        $cityWeatherInfoObj->cityNametoWOEID($cityname);
-        if ($cityWeatherInfoObj->woeid == "") {
+    
+    public function runCityWeatherInfo($cityname) 
+    {
+        $this->cityWeatherInfoObj = new CityWeatherInfo();
+        $this->cityWeatherInfoObj->cityNametoWOEID($cityname);
+        if ($this->cityWeatherInfoObj->woeid == "") {
             echo "Error 1: City Name not Found";
             exit(1);
         }
-        $cityWeatherInfoObj->getCityWeatherFeed($cityWeatherInfoObj->woeid);
-        $cityWeatherInfoObj->displayWeatherInfo();
+        $this->cityWeatherInfoObj->getCityWeatherFeed($this->cityWeatherInfoObj->woeid);
+        $this->cityWeatherInfoObj->displayWeatherInfo();
+        $this->statisticsCalculatorObj = new CityWeatherStatisticsCalculator();
+        $warmestDays = $this->statisticsCalculatorObj->assessWarmestDay
+                ($this->cityWeatherInfoObj->weatherForecast);
+        $coolestDays = $this->statisticsCalculatorObj->assessCoolestDay
+                ($this->cityWeatherInfoObj->weatherForecast);
+
+        printf("Warmest Day/Days");
+        printf("\n");
+        $this->cityWeatherInfoObj->displaySpecificDayWeatherInfo($warmestDays);
+        printf("Coolest Day/Days");
+        printf("\n");
+        $this->cityWeatherInfoObj->displaySpecificDayWeatherInfo($coolestDays);
+        $this->statisticsCalculatorObj->averageHighTemp
+                ($this->cityWeatherInfoObj->weatherForecast,$this->cityWeatherInfoObj->getTemperatureUnit());
+        $this->statisticsCalculatorObj->averageLowTemp
+                ($this->cityWeatherInfoObj->weatherForecast,$this->cityWeatherInfoObj->getTemperatureUnit());
+        $this->statisticsCalculatorObj->frequentWeatherType
+                ($this->cityWeatherInfoObj->weatherForecast);
     }
 }
-
-////////////////////////////////////////////////////////////
-if (count($argv) < 2) {
-    echo "Error 3: City Name Not Entered" . PHP_EOL;
-    exit(3);
-}
-$city = $argv[1];
-$DriverObj = new cityWeatherInfoDriver();
-$DriverObj->cityWeatherInfo_run($city); //Calling Run Function
-
-
-
-
