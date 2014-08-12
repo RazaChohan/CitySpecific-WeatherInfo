@@ -47,7 +47,6 @@ module.exports = function(grunt) {
         dist: {
             options: {
                 directory : ['./'],
-				exclude:'vendor,phpmd,node_modules,forphpmd,docs',
                 target : 'docs'
             }
         }	

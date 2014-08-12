@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class CityWeatherStatisticsCalculator</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class CityWeatherStatisticsCalculator</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Contains City Weather Statistics Calculator class Implementation</p>
+<p class="description"><p>This Class calculates different statistics of weather by getting  weather forcast of five days.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Muhammad Raza &lt;<a href="mailto:muhammad.raza@coeus-solutions.de">muhammad.raza@coeus-solutions.de</a>&gt;</li>
+				<li><span class="field">version:</span> v 1.2</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_YahooWeatherAPI_cityWeatherStatisticsCalculator.php.html">/YahooWeatherAPI_cityWeatherStatisticsCalculator.php</a> (line <span class="field">26</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																				
+												<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#assessCoolestDay" title="details" class="method-name">assessCoolestDay</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$weatherForecast</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#assessWarmestDay" title="details" class="method-name">assessWarmestDay</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$weatherForecast</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#averageHighTemp" title="details" class="method-name">averageHighTemp</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$weatherForecast</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$unit</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#averageLowTemp" title="details" class="method-name">averageLowTemp</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$weatherForecast</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$unit</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#calculateAverageTemp" title="details" class="method-name">calculateAverageTemp</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$low</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$high</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#frequentWeatherType" title="details" class="method-name">frequentWeatherType</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$weatherForecast</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodassessCoolestDay" id="assessCoolestDay"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">assessCoolestDay</span> (line <span class="line-number">99</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Assesses the coolest day/days using the weather forecast</p>
+<p class="description"><p>This method/funciton gets weather forecast in an array from the callee  and on the basis of average temperature calculated returns the array  containing index of day/days which is/are coolest among all.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> 'Array of Indexes</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			assessCoolestDay
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$weatherForecast</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$weatherForecast</span><span class="var-description">: 'Weather Forecast of Five days'</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodassessWarmestDay" id="assessWarmestDay"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">assessWarmestDay</span> (line <span class="line-number">62</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Assesses the warmest day/days using the weather forecast</p>
+<p class="description"><p>This method/funciton gets weather forecast in an array from the callee  and on the basis of average temperature calculated returns the array  containing index of day/days which is/are warmest among all.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> 'Array of Indexes</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			assessWarmestDay
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$weatherForecast</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$weatherForecast</span><span class="var-description">: 'Weather Forecast of Five days'</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaverageHighTemp" id="averageHighTemp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">averageHighTemp</span> (line <span class="line-number">133</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculates the average High Temperature from High Temperature of five days.</p>
+<p class="description"><p>Gets weather forecast array from the callee and calculates the  average high temperature from the weather data of five days.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			averageHighTemp
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$weatherForecast</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$unit</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$weatherForecast</span><span class="var-description">: Weather Forecast of five days         string $unit            Unit of Temperature returned from Yahoo Weather API</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$unit</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaverageLowTemp" id="averageLowTemp"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">averageLowTemp</span> (line <span class="line-number">154</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculates the average low Temperature from low Temperature of five days.</p>
+<p class="description"><p>Gets weather forecast array from the callee and calculates the  average low temperature from the weather data of five days.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			averageLowTemp
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$weatherForecast</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$unit</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$weatherForecast</span><span class="var-description">: Weather Forecast of five days         string $unit            Unit of Temperature returned from Yahoo Weather API</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$unit</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcalculateAverageTemp" id="calculateAverageTemp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">calculateAverageTemp</span> (line <span class="line-number">42</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calculates the average temp from two values of temperature</p>
+<p class="description"><p>This method gets two values from the callee both are the temperature  readings and calculates the average of both temperatures and returns  the calculated average temperature.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> avg 'Average Calculated Temperature'</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			calculateAverageTemp
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$low</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$high</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$low</span><span class="var-description">: low 'Lowest Temperature of the day'         integer high 'Highest Temperature of the day'</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$high</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfrequentWeatherType" id="frequentWeatherType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">frequentWeatherType</span> (line <span class="line-number">174</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Asssess the frequent Weather type from weather forecast</p>
+<p class="description"><p>This method gets the weather forecast from the callee and assesses  the most frequent weather type in coming five days.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			frequentWeatherType
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$weatherForecast</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$weatherForecast</span><span class="var-description">: 'weather forecast of five days'</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 12 Aug 2014 18:19:19 +0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+	</p>
+	</div></body>
+</html>
