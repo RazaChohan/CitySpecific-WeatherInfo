@@ -34,6 +34,7 @@ days.The weather forecast info is collected from Yahoo Weather API. Following ar
 ### How to Use
 
 - First Clone the repository on your machine
+  
   **git clone https://github.com/RazaChohan/CitySpecific-WeatherInfo.git**
 - Open terminal and enter the following statement:
   
