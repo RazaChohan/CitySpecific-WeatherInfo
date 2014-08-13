@@ -3,8 +3,8 @@ CitySpecific-WeatherInfo
 
 > Display the Weather Info of a particular city.
 
-------------------![alt text](https://lh6.ggpht.com/AQgEWq9WMSMD1MPd2RDqS6HJCzq8nu-iRFW3PvKqTb1IglzRh5DChrruWlcJmvoQ_zo=w300
- "Logo Title Text 1")----------------
+![alt text](https://lh6.ggpht.com/AQgEWq9WMSMD1MPd2RDqS6HJCzq8nu-iRFW3PvKqTb1IglzRh5DChrruWlcJmvoQ_zo=w300
+ "Logo Title Text 1")
 
 CitySpecific-Weather Info is a command line tool that not only gives 
 current weather information but also gives weather forecast upto five
@@ -36,7 +36,7 @@ days.The weather forecast info is collected from Yahoo Weather API. Following ar
 - First Clone the repository on your machine
 - Open terminal and enter the following statement:
   
- ** php php YahooWeatherAPI_cityWeatherInfoRun.php 'cityname' **
+ **php YahooWeatherAPI_cityWeatherInfoRun.php 'cityname'**
 
-here city name will be without quotes.
+ *Note:*  Here city name will be without quotes.
 
