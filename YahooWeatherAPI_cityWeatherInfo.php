@@ -159,6 +159,7 @@ class CityWeatherInfo
     {
         printf("\nLocation Info:\n");
         $mask = "|%+13s |%-20s |\n";
+        printf($mask, "City Name==>", $this->city);
         printf($mask, "Country==>", $this->countryName);
         printf($mask, "Time Zone==>", $this->timezone);
         printf($mask, 'Place Type==>', $this->placeType);
