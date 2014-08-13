@@ -22,7 +22,6 @@ namespace citySpecificWeatherInfo;
  * @category Training/Learning PHP
  * @version v 1.2
  */
-
 class CityWeatherStatisticsCalculator 
 {
     /**
@@ -38,7 +37,6 @@ class CityWeatherStatisticsCalculator
      * 
      * @return integer avg 'Average Calculated Temperature'
      */
-    
     public function calculateAverageTemp($low, $high) 
     {
         $sum = intval($low) + intval($high);
@@ -58,7 +56,6 @@ class CityWeatherStatisticsCalculator
      * @return array $$returnIndexValues 'Array of Indexes
      * 
      */
-    
     public function assessWarmestDay($weatherForecast) 
     {
         $returnIndexValues = array();
@@ -95,7 +92,6 @@ class CityWeatherStatisticsCalculator
      * @return array $returnIndexValues 'Array of Indexes
      * 
      */
-    
     public function assessCoolestDay($weatherForecast) 
     {
         $returnIndexValues = array();
@@ -129,7 +125,6 @@ class CityWeatherStatisticsCalculator
      * @param array  $weatherForecast Weather Forecast of five days
      *        string $unit            Unit of Temperature returned from Yahoo Weather API
      */
-    
     public function averageHighTemp($weatherForecast, $unit) 
     {
         $arrayHighTemps = array();
@@ -149,8 +144,7 @@ class CityWeatherStatisticsCalculator
      *
      * @param array  $weatherForecast Weather Forecast of five days
      *        string $unit            Unit of Temperature returned from Yahoo Weather API
-     */ 
-    
+     */
     public function averageLowTemp($weatherForecast, $unit) 
     {
         $arrayLowTemps = array();
@@ -170,7 +164,6 @@ class CityWeatherStatisticsCalculator
      * @param array $weatherForecast 'weather forecast of five days'
      * 
      */
-    
     public function frequentWeatherType($weatherForecast)
     {
         $weatherType = array();       
