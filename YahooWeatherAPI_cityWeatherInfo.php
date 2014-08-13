@@ -25,19 +25,58 @@ namespace citySpecificWeatherInfo;
 
 class CityWeatherInfo 
 {
-    public $woeid; //Where on Earth ID for City
-    public $timezone; //Timezone of City
-    public $countryName; //Country Name of City
-    public $placeType; //Type of Place
-    public $units; //Units of Weather Info
-    public $windInfo; //Weather Wind Info
-    public $atmosphereInfo; //Weather Atmosphere Info
-    public $astronomyInfo; //Weather Astronomy Info
-    public $location; //Location Info
-    public $currentWeatherCondition; //Current Weather Condition
-    public $weatherForecast; //Weather Forecast
-    public $city; //City name returned from API
-    private $woeidUrl="http://query.yahooapis.com/v1/public/yql"; //Where on Earth ID URL
+    /**
+     * @var integer Where on Earth ID for City
+     */
+    public $woeid;
+    /**
+     * @var string Timezone of City
+     */
+    public $timezone; 
+    /**
+     * @var string Country Name of City
+     */
+    public $countryName; 
+    /**
+     * @var string Type of Place
+     */
+    public $placeType; 
+    /**
+     * @var array Units of Weather Info
+     */
+    public $units; 
+    /**
+     * @var array Weather Wind Info
+     */
+    public $windInfo;
+    /**
+     * @var array Weather Atmosphere Info
+     */
+    public $atmosphereInfo;
+    /**
+     * @var array Weather Astronomy Info
+     */
+    public $astronomyInfo;
+    /**
+     * @var array Location Info
+     */
+    public $location; 
+    /**
+     * @var array Current Weather Condition
+     */
+    public $currentWeatherCondition; 
+    /**
+     * @var array Weather Forecast
+     */
+    public $weatherForecast; 
+    /**
+     * @var string City name returned from API
+     */
+    public $city; 
+    /**
+     * @var string Where on Earth ID URL
+     */
+    private $woeidUrl="http://query.yahooapis.com/v1/public/yql"; 
     /**
      *
      * Gets the city name from the calling function and return the complete woeid url
