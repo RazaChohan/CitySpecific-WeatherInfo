@@ -23,7 +23,6 @@ namespace citySpecificWeatherInfo;
  * @category Training/Learning PHP
  * @version v 1.2
  */
-
 class CityWeatherInfoDriver 
 {
     private $cityWeatherInfoObj; //City Weather info Class Object
@@ -36,7 +35,6 @@ class CityWeatherInfoDriver
      *
      * @param string $cityname 'City Name'
      */
-    
     public function runCityWeatherInfo($cityname) 
     {
         $this->cityWeatherInfoObj = new CityWeatherInfo();
