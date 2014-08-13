@@ -36,11 +36,12 @@ class CityWeatherInfo
     public $location; //Location Info
     public $currentWeatherCondition; //Current Weather Condition
     public $weatherForecast; //Weather Forecast
-    private $woeidUrl="http://query.yahooapis.com/v1/public/yql";
+    public $city; //City name returned from API
+    private $woeidUrl="http://query.yahooapis.com/v1/public/yql"; //Where on Earth ID URL
     /**
      *
-     * Gets the city name from the calling function
-     * and return the complete woeid url 
+     * Gets the city name from the calling function and return the complete woeid url
+     *  
      * 
      * This method/funciton gets city name as a parameter and concatinates 
      * it with url to make complete WOEID URL.  
@@ -58,6 +59,31 @@ class CityWeatherInfo
     }
     /**
      *
+     * Gets the url from the calling function and returns the API response
+     * 
+     * This method/funciton gets city name as a parameter and concatinates 
+     * it with url to make complete WOEID URL.  
+     * 
+     * @param string $yql_query_url 'The url to get XML From.'
+     * 
+     * @return string $xml 'XMl returned from API'
+     */
+    
+    public function getResultFromYQL($yql_query_url) 
+    {
+        $session = curl_init($yql_query_url);
+        curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+        $xml = curl_exec($session);
+        curl_close($session);
+        if($xml==NULL)
+        {
+            echo 'Error 3: Wrong City Name, No Data Returned from API';
+            exit(3);
+        }
+        return $xml;
+    }
+    /**
+     *
      * Gets the WOEID,Timezone,CityName and Type of Place from Yahoo Weather API
      *
      * This method/funciton gets city name as a parameter and makes an API call 
@@ -71,12 +97,13 @@ class CityWeatherInfo
     public function cityNametoWOEID($cityName)
     {
         $url = $this->getWoeidUrl($cityName);
-        $this->cityToWoeidResult = file_get_contents($url);
+        $this->cityToWoeidResult = $this->getResultFromYQL($url);
         $xml = simplexml_load_string($this->cityToWoeidResult);
         $this->woeid = $xml->results->place->woeid;
         $this->timezone = $xml->results->place->timezone;
         $this->countryName = $xml->results->place->country;
         $this->placeType = $xml->results->place->placeTypeName;
+        $this->city=$xml->results->place->name;
     }
     /**
      *
@@ -92,8 +119,8 @@ class CityWeatherInfo
     
     public function getCityWeatherFeed() 
     {
-        $url = "http://weather.yahooapis.com/forecastrss?w=$this->woeid&u=c";
-        $fetchWeatherData = file_get_contents($url);
+        $url = "http://weather.yahooapis.com/forecastrss?w=$this->woeid&u=c"; 
+        $fetchWeatherData = $this->getResultFromYQL($url);
         $xmlWeatherData = simplexml_load_string($fetchWeatherData);
         $this->location = $xmlWeatherData->channel->xpath('yweather:location');
 
@@ -172,7 +199,7 @@ class CityWeatherInfo
         printf("\n");
          
         $mask3 = "|%5s |%+12s|%5s |%5s |%18s|\n";
-        printf("Weather Forecast:\n\n");
+        printf("Weather Forecast:\n");
         printf($mask3, "Day", "Date", "Low", "High", "Weather Type");
         for($i=0; $i<5; $i++){
                printf($mask3, $this->weatherForecast[$i]['day'], 
