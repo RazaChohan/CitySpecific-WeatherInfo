@@ -22,7 +22,6 @@ namespace citySpecificWeatherInfo;
  * @category Training/Learning PHP
  * @version v 1.2
  */
-
 class CityWeatherInfo 
 {
     /**
@@ -89,7 +88,6 @@ class CityWeatherInfo
      * 
      * @return completeWoeidUrl 'Complete URL with CityName'
      */
-    
     public function getWoeidUrl($cityName)
     {
         $completeWoeidUrl = $this->woeidUrl."?q=select%20*%20from%20geo.places%"
@@ -107,7 +105,6 @@ class CityWeatherInfo
      * 
      * @return string $xml 'XMl returned from API'
      */
-    
     public function getResultFromYQL($yql_query_url) 
     {
         $session = curl_init($yql_query_url);
@@ -132,7 +129,6 @@ class CityWeatherInfo
      * 
      * @param string $cityName the city Name to get WOEID.
      */
-    
     public function cityNametoWOEID($cityName)
     {
         $url = $this->getWoeidUrl($cityName);
@@ -155,7 +151,6 @@ class CityWeatherInfo
      * upto 5 days.
      * 
      */
-    
     public function getCityWeatherFeed() 
     {
         $url = "http://weather.yahooapis.com/forecastrss?w=$this->woeid&u=c"; 
@@ -193,7 +188,6 @@ class CityWeatherInfo
      * related info provided by the API and forecast of weather upto 5 days.
      * 
      */
-    
     public function displayWeatherInfo() 
     {
         printf("\nLocation Info:\n");
@@ -260,7 +254,6 @@ class CityWeatherInfo
      * 
      * @param integer $indexArray 'the index to get Specific Day Weather Info.'
      */
-    
     public function displaySpecificDayWeatherInfo($indexArray)
     {
         $mask3 = "|%5s |%+12s|%5s |%5s |%18s|\n";
