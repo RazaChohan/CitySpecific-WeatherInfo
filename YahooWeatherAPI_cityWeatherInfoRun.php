@@ -13,19 +13,31 @@ namespace citySpecificWeatherInfo;
 require_once  ('YahooWeatherAPI_cityWeatherInfo.php');
 require_once  ('YahooWeatherAPI_cityWeatherStatisticsCalculator.php');
 require_once  ('YahooWeatherAPI_cityWeatherInfoDriver.php');
+
+function printHelp()
+{
+    echo "Usage: php YahooWeatherAPI_cityWeatherInfoRun.php 'cityname' without quotes" . PHP_EOL;
+}
      /**
      *
      * Calling Driver class run function
      *
      */
         $city="";
+        $temperatureUnit="c";
+        
         if (count($argv) < 2) {
-            echo "Error 3: City Name Not Entered" . PHP_EOL;
+            printHelp();
             exit(3);
+        }
+        else if (strpos($argv[1],'help') !== false) {
+            printHelp();
+            return;
         }
         else {
             if(count($argv)==2) {
                 $city = $argv[1];
+                str_replace('"', "", $city);
             }
             else {
                 for($i=1; $i<count($argv); $i++){
@@ -33,5 +45,5 @@ require_once  ('YahooWeatherAPI_cityWeatherInfoDriver.php');
                 }
             }
         $driverObj = new CityWeatherInfoDriver();
-        $driverObj->runCityWeatherInfo($city);
+        $driverObj->runCityWeatherInfo($city,$temperatureUnit);
         }

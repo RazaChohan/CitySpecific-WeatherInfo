@@ -37,7 +37,7 @@ class CityWeatherInfoDriver
      * @param string $cityname 'City Name'
      */
     
-    public function runCityWeatherInfo($cityname) 
+    public function runCityWeatherInfo($cityname,$temperatureUnit) 
     {
         $this->cityWeatherInfoObj = new CityWeatherInfo();
         $this->cityWeatherInfoObj->cityNametoWOEID($cityname);

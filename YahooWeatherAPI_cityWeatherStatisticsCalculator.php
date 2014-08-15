@@ -200,9 +200,9 @@ class CityWeatherStatisticsCalculator
                 }
             }
         }   
-        echo "Frequent Weather Types: ";
+        echo "Frequent Weather Types: ".PHP_EOL;
         for($i = 0; $i < count($weatherTypeArray); $i++) {
-            echo $weatherTypeArray[$i] . PHP_EOL;
+            echo "==>" . $weatherTypeArray[$i] . PHP_EOL;
         }
     }
 }
