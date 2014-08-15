@@ -3,7 +3,8 @@
         "phpmd/phpmd" : "2.0.*",
          "squizlabs/php_codesniffer": "1.*",
          "sebastian/phpcpd": "*",
-		 "sebastian/phpdcd": "*"
+		 "sebastian/phpdcd": "*",
+		 "phpdocumentor/phpdocumentor":"2.*"
     }
 }
 

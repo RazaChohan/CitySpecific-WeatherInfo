@@ -43,15 +43,16 @@ module.exports = function(grunt) {
             }
         },
 
-        phpdocumentor: {
-        dist: {
-            options: {
-                directory : ['./'],
-                target : 'docs'
-            }
-        }	
-    },
-	    shell: {                                
+      phpdocumentor: {
+    	dist: {
+        bin: 'vendor/bin/phpdoc',
+        directory: '*.php',
+        target: 'docs',
+        ignore: ['vendor','docs','node_modules']
+               } 
+		},
+
+ 	    shell: {                                
         listFolders: {                     
           options: {                     
             stderr: false
@@ -69,8 +70,6 @@ module.exports = function(grunt) {
 	  bin: 'vendor/bin/phpdcd'
     }
 }
-
-
     });
 
     // Load required modules

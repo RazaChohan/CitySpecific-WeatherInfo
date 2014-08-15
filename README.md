@@ -1,7 +1,7 @@
 CitySpecific-WeatherInfo
 ========================
 
-> Display the Weather Info of a particular city.
+> Displays the Weather Info of a particular city.
 
 ![alt text](https://lh6.ggpht.com/AQgEWq9WMSMD1MPd2RDqS6HJCzq8nu-iRFW3PvKqTb1IglzRh5DChrruWlcJmvoQ_zo=w300
  "Logo Title Text 1")
